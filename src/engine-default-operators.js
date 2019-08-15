@@ -11,6 +11,16 @@ Operators.push(new Operator('notIn', (a, b) => b.indexOf(a) === -1))
 Operators.push(new Operator('contains', (a, b) => a.indexOf(b) > -1, Array.isArray))
 Operators.push(new Operator('doesNotContain', (a, b) => a.indexOf(b) === -1, Array.isArray))
 
+const containsOnly = (a, b) => {
+  for (let element in a) {
+    if (b.indexOf(element) === -1) return false
+  }
+
+  return true
+}
+
+Operators.push(new Operator('containsOnly', containsOnly, Array.isArray))
+
 function numberValidator (factValue) {
   return Number.parseFloat(factValue).toString() !== 'NaN'
 }
