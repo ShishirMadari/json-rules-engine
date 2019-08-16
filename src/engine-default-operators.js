@@ -17,7 +17,7 @@ const containsOnly = (a, b) => {
   b.forEach(element => test[element] = true)
 
   for (let element of a) {
-    if (!b[element]) return false
+    if (!test[element]) return false
   }
 
   return true
