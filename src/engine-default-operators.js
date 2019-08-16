@@ -24,6 +24,15 @@ const containsOnly = (a, b) => {
 
 Operators.push(new Operator('containsOnly', containsOnly, Array.isArray))
 
+const everyEquals = (a, b) => {
+  for (let element of a)
+    if (b !== element) return false
+
+  return true
+}
+
+Operators.push(new Operator('everyEquals', everyEquals, Array.isArray))
+
 function numberValidator (factValue) {
   return Number.parseFloat(factValue).toString() !== 'NaN'
 }
