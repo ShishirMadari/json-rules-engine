@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha && npm run lint --silent",
     "lint": "standard --verbose --env mocha | snazzy || true",
-    "lint:fix": "standard --fix --env mocha",
+    "lint:fix": "standard --fix --env mocha"
   },
   "keywords": [
     "rules",
