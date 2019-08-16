@@ -68,6 +68,37 @@ var containsOnly = function containsOnly(a, b) {
 
 Operators.push(new _operator2.default('containsOnly', containsOnly, Array.isArray));
 
+var everyEquals = function everyEquals(a, b) {
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
+
+  try {
+    for (var _iterator2 = a[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      var element = _step2.value;
+
+      if (b !== element) return false;
+    }
+  } catch (err) {
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+        _iterator2.return();
+      }
+    } finally {
+      if (_didIteratorError2) {
+        throw _iteratorError2;
+      }
+    }
+  }
+
+  return true;
+};
+
+Operators.push(new _operator2.default('everyEquals', everyEquals, Array.isArray));
+
 function numberValidator(factValue) {
   return Number.parseFloat(factValue).toString() !== 'NaN';
 }
