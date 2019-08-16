@@ -32,6 +32,12 @@ Operators.push(new _operator2.default('doesNotContain', function (a, b) {
 }, Array.isArray));
 
 var containsOnly = function containsOnly(a, b) {
+  var test = {};
+
+  b.forEach(function (element) {
+    return test[element] = true;
+  });
+
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -40,7 +46,7 @@ var containsOnly = function containsOnly(a, b) {
     for (var _iterator = a[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var element = _step.value;
 
-      if (b.indexOf(element) === -1) return false;
+      if (!b[element]) return false;
     }
   } catch (err) {
     _didIteratorError = true;
