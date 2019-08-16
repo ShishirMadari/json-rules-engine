@@ -11,10 +11,6 @@
     "build": "babel --stage 1 -d dist/ src/",
     "watch": "babel --watch --stage 1 -d dist/ src"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chasetruepill/json-rules-engine"
-  },
   "keywords": [
     "rules",
     "engine",
@@ -40,10 +36,6 @@
   },
   "author": "Cache Hamm <cache.hamm@gmail.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chasetruepill/json-rules-engine/issues"
-  },
-  "homepage": "https://github.com/chasetruepill/json-rules-engine",
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
