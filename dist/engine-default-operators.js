@@ -35,7 +35,7 @@ var containsOnly = function containsOnly(a, b) {
   var test = {};
 
   b.forEach(function (element) {
-    return test[element] = true;
+    test[element] = true;
   });
 
   var _iteratorNormalCompletion = true;
@@ -46,7 +46,7 @@ var containsOnly = function containsOnly(a, b) {
     for (var _iterator = a[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var element = _step.value;
 
-      if (!b[element]) return false;
+      if (!test[element]) return false;
     }
   } catch (err) {
     _didIteratorError = true;

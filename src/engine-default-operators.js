@@ -14,11 +14,10 @@ Operators.push(new Operator('doesNotContain', (a, b) => a.indexOf(b) === -1, Arr
 const containsOnly = (a, b) => {
   const test = {}
 
-  b.forEach(element => test[element] = true)
+  b.forEach(element => { test[element] = true })
 
-  for (let element of a) {
+  for (let element of a)
     if (!test[element]) return false
-  }
 
   return true
 }
