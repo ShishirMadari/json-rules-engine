@@ -12,9 +12,7 @@ Operators.push(new Operator('contains', (a, b) => a.indexOf(b) > -1, Array.isArr
 Operators.push(new Operator('doesNotContain', (a, b) => a.indexOf(b) === -1, Array.isArray))
 
 const containsOnly = (a, b) => {
-  console.log(a, b)
-  for (let element in a) {
-    console.log("Test element", element)
+  for (let element of a) {
     if (b.indexOf(element) === -1) return false
   }
 
