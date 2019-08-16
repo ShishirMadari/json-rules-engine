@@ -2,14 +2,11 @@
   "name": "json-rules-engine",
   "version": "3.1.0",
   "description": "Rules Engine expressed in simple json",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha && npm run lint --silent",
     "lint": "standard --verbose --env mocha | snazzy || true",
     "lint:fix": "standard --fix --env mocha",
-    "prepublishOnly": "npm run build",
-    "build": "babel --stage 1 -d dist/ src/",
-    "watch": "babel --watch --stage 1 -d dist/ src"
   },
   "keywords": [
     "rules",
