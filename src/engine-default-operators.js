@@ -12,12 +12,12 @@ Operators.push(new Operator('contains', (a, b) => a.indexOf(b) > -1, Array.isArr
 Operators.push(new Operator('doesNotContain', (a, b) => a.indexOf(b) === -1, Array.isArray))
 
 const containsOnly = (a, b) => {
-  const test = {}
+  const allowed = {}
 
-  b.forEach(element => { test[element] = true })
+  b.forEach(name => { allowed[name] = true })
 
-  for (let element of a)
-    if (!test[element]) return false
+  for (let name of a)
+    if (!allowed[name]) return false
 
   return true
 }
@@ -32,6 +32,29 @@ const everyEquals = (a, b) => {
 }
 
 Operators.push(new Operator('everyEquals', everyEquals, Array.isArray))
+
+const dimensionsContain = (a, b) => {
+  const allowed = {}
+
+  b.forEach(name => { allowed[name] = true })
+
+  for (let dimension of a) {
+    let found = false
+    for (let name of dimension) {
+      if (allowed[name]) {
+        found = true
+        break
+      }
+    }
+
+    if (found) continue
+    return false
+  }
+
+  return true
+}
+
+Operators.push(new Operator('dimensionsContain', dimensionsContain, Array.isArray))
 
 function numberValidator (factValue) {
   return Number.parseFloat(factValue).toString() !== 'NaN'
