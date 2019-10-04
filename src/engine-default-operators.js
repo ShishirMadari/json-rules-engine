@@ -56,6 +56,15 @@ const dimensionsContain = (a, b) => {
 
 Operators.push(new Operator('dimensionsContain', dimensionsContain, Array.isArray))
 
+const everyTrue = (a, b) => {
+  for (let element of a)
+    if (!b(a)) return false
+
+  return true
+}
+
+Operators.push(new Operator('everyTrue', everyTrue, Array.isArray))
+
 function numberValidator (factValue) {
   return Number.parseFloat(factValue).toString() !== 'NaN'
 }
