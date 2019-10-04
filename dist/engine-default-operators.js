@@ -166,6 +166,37 @@ var dimensionsContain = function dimensionsContain(a, b) {
 
 Operators.push(new _operator2.default('dimensionsContain', dimensionsContain, Array.isArray));
 
+var everyTrue = function everyTrue(a, b) {
+  var _iteratorNormalCompletion5 = true;
+  var _didIteratorError5 = false;
+  var _iteratorError5 = undefined;
+
+  try {
+    for (var _iterator5 = a[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+      var element = _step5.value;
+
+      if (!b(a)) return false;
+    }
+  } catch (err) {
+    _didIteratorError5 = true;
+    _iteratorError5 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion5 && _iterator5.return) {
+        _iterator5.return();
+      }
+    } finally {
+      if (_didIteratorError5) {
+        throw _iteratorError5;
+      }
+    }
+  }
+
+  return true;
+};
+
+Operators.push(new _operator2.default('everyTrue', everyTrue, Array.isArray));
+
 function numberValidator(factValue) {
   return Number.parseFloat(factValue).toString() !== 'NaN';
 }
