@@ -58,7 +58,7 @@ Operators.push(new Operator('dimensionsContain', dimensionsContain, Array.isArra
 
 const everyTrue = (a, b) => {
   for (let element of a)
-    if (!b(a)) return false
+    if (!b(element)) return false
 
   return true
 }

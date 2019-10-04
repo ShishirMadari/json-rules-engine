@@ -175,7 +175,7 @@ var everyTrue = function everyTrue(a, b) {
     for (var _iterator5 = a[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
       var element = _step5.value;
 
-      if (!b(a)) return false;
+      if (!b(element)) return false;
     }
   } catch (err) {
     _didIteratorError5 = true;
