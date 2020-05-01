@@ -166,6 +166,14 @@ var dimensionsContain = function dimensionsContain(a, b) {
 
 Operators.push(new _operator2.default('dimensionsContain', dimensionsContain, Array.isArray));
 
+var isTrue = function isTrue(a, b) {
+  if (!b(a)) return false;
+
+  return true;
+};
+
+Operators.push(new _operator2.default('isTrue', isTrue));
+
 var everyTrue = function everyTrue(a, b) {
   var _iteratorNormalCompletion5 = true;
   var _didIteratorError5 = false;
