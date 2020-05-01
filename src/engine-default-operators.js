@@ -56,6 +56,14 @@ const dimensionsContain = (a, b) => {
 
 Operators.push(new Operator('dimensionsContain', dimensionsContain, Array.isArray))
 
+const isTrue = (a, b) => {
+  if (!b(a)) return false
+
+  return true
+}
+
+Operators.push(new Operator('isTrue', isTrue))
+
 const everyTrue = (a, b) => {
   for (let element of a)
     if (!b(element)) return false
